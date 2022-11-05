@@ -4,7 +4,7 @@ services:
   influxdb:
     image: influxdb:2.5.1-alpine
     volumes:
-      - influxdb-storage:/var/lib/influxdb2:rw
+      - ./data/influxdb:/var/lib/influxdb2:rw
     env_file:
       - .env
     entrypoint: [ "./entrypoint.sh" ]
@@ -24,12 +24,8 @@ services:
   grafana:
     image: grafana/grafana-oss:9.2.3
     volumes:
-      - grafana-storage:/var/lib/grafana:rw
+      - ./data/grafana:/var/lib/grafana:rw
     depends_on:
       - influxdb
     ports:
       - ${GRAFANA_PORT}:3000
-
-volumes:
-  grafana-storage:
-  influxdb-storage:
