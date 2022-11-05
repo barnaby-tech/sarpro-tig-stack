@@ -7,7 +7,7 @@ Gain the ability to analyze and monitor telemetry data by deploying the TIG stac
 
 ## ⚡️ Getting Started
 
-Change the environment variables define in `.env` that are used to setup and deploy the stack
+Create an `.env` file from the `.env.sample` file, that will contain the environment variables that are used to setup and deploy the stack
 
 ```bash
 ├── telegraf/
